@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+    <link href="../../dist/output.css" rel="stylesheet">
+
+    <title>Register</title>
+</head>
+
+<body>
+    <section class="bg-gray-50 min-h-screen flex items-center justify-center">
+        <!-- registration container -->
+        <div class="bg-gray-100 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
+            <!-- form -->
+            <div class="md:w-1/2 px-8 md:px-16">
+                <h2 class="font-bold text-2xl text-black">Register</h2>
+                <p class="text-xs mt-4 text-black">Create a new account</p>
+
+                <form id="registrationForm" class="flex flex-col gap-4">
+                    <div>
+                        <input class="p-2 mt-2 rounded-xl border w-full" id="name" type="name" name="name" placeholder="Name">
+                        <div id="nameError" class="text-xs hidden" style="color: rgb(201, 42, 42); padding-left: 5px;">
+                            Please enter your name
+                        </div>
+                    </div>
+                    <div>
+                        <input class="p-2 mt-2 rounded-xl border w-full" id="email" type="email" name="email"
+                            placeholder="Email">
+                        <div id="emailError" class="text-xs hidden" style="color: rgb(201, 42, 42); padding-left: 5px;">
+                            Please enter your email
+                        </div>
+                    </div>
+                    <div>
+                        <input class="p-2 mt-2 rounded-xl border w-full" id="phone" type="tel" name="phone"
+                            placeholder="Phone">
+                        <div id="phoneError" class="text-xs hidden" style="color: rgb(201, 42, 42); padding-left: 5px;">
+                            Please enter your phone number
+                        </div>
+                    </div>
+                    <div>
+                        <input class="p-2 mt-2 rounded-xl border w-full" id="address" type="address" name="address"
+                            placeholder="Address">
+                        <div id="addressError" class="text-xs hidden"
+                            style="color: rgb(201, 42, 42); padding-left: 5px;">
+                            Please enter your address
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <input class="p-2 rounded-xl border w-full" id="password" type="password" name="password"
+                            placeholder="Password">
+                        <div class="absolute top-1/2 right-3 -translate-y-1/2">
+                            <svg id="showPassword" class="eye-icon cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="none" viewBox="0 0 576 512">
+                                <path fill="currentColor"
+                                    d="M320 400c-75.85 0-137.25-58.71-142.9-133.11L72.2 185.82c-13.79 17.3-26.48 35.59-36.72 55.59a32.35 32.35 0 0 0 0 29.19C89.71 376.41 197.07 448 320 448c26.91 0 52.87-4 77.89-10.46L346 397.39a144.13 144.13 0 0 1-26 2.61zm313.82 58.1l-110.55-85.44a331.25 331.25 0 0 0 81.25-102.07 32.35 32.35 0 0 0 0-29.19C550.29 135.59 442.93 64 320 64a308.15 308.15 0 0 0-147.32 37.7L45.46 3.37A16 16 0 0 0 23 6.18L3.37 31.45A16 16 0 0 0 6.18 53.9l588.36 454.73a16 16 0 0 0 22.46-2.81l19.64-25.27a16 16 0 0 0-2.82-22.45zm-183.72-142l-39.3-30.38A94.75 94.75 0 0 0 416 256a94.76 94.76 0 0 0-121.31-92.21A47.65 47.65 0 0 1 304 192a46.64 46.64 0 0 1-1.54 10l-73.61-56.89A142.31 142.31 0 0 1 320 112a143.92 143.92 0 0 1 144 144c0 21.63-5.29 41.79-13.9 60.11z">
+                                </path>
+                            </svg>
+                            <svg id="hidePassword" class="x-circle-icon cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="none" viewBox="0 0 640 512" style="display: none;">
+                                <path fill="currentColor"
+                                    d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div id="passwordError" class="text-xs hidden"
+                            style="color: rgb(201, 42, 42); padding-left: 5px;">
+                            Please enter your password
+                        </div>
+                    </div>
+                    <div onclick="validateRegisterUser()" id="register_button" style="cursor: pointer;"
+                        class="bg-[#002D74] text-center rounded-xl text-white py-2 hover:scale-105 duration-300 cursor-pointer">
+                        Register
+                    </div>
+                </form>
+
+                <div class="mt-3 text-xs flex justify-between items-center text-black">
+                    <p>Already have an account?</p>
+                    <button class="py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300"
+                        id="login">Login</button>
+                </div>
+            </div>
+
+            <div class="md:block hidden w-1/2">
+                <img class="rounded-2xl" src="../../assets/login_register/login_register.png">
+            </div>
+        </div>
+    </section>
+
+    <script src="../../js/register.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- //Validate the register form submission -->
+    <script>
+        document.getElementById("login").addEventListener("click", function () {
+            window.location.href = "logintration.html";
+        });
+
+        function validateRegisterUser() {
+            // Validate the form before submitting
+            const nameInput = document.getElementById("name");
+            const nameError = document.getElementById("nameError");
+
+            const emailInput = document.getElementById("email");
+            const emailError = document.getElementById("emailError");
+
+            const phoneInput = document.getElementById("phone");
+            const phoneError = document.getElementById("phoneError");
+
+            const addressInput = document.getElementById("address");
+            const addressError = document.getElementById("addressError");
+
+            const passwordInput = document.getElementById("password");
+            const passwordError = document.getElementById("passwordError");
+
+            // Reset error messages
+            nameError.style.display = "none";
+            emailError.style.display = "none";
+            phoneError.style.display = "none";
+            addressError.style.display = "none";
+            passwordError.style.display = "none";
+
+            // Check if email and password are empty
+            if (nameInput.value.trim() === "") {
+                nameError.style.display = "block";
+                return;
+            }
+
+            if (emailInput.value.trim() === "") {
+                emailError.style.display = "block";
+                return;
+            }
+
+            if (phoneInput.value.trim() === "") {
+                phoneError.style.display = "block";
+                return;
+            }
+
+            if (addressInput.value.trim() === "") {
+                addressError.style.display = "block";
+                return;
+            }
+
+            if (passwordInput.value.trim() === "") {
+                passwordError.style.display = "block";
+                return;
+            }
+            registerUser();
+        }
+    </script>
+
+    <script src="../../js/register.js"></script>
+    <script>
+        document.getElementById("login").addEventListener("click", function () {
+            window.location.href = "logintration.html";
+        });
+
+    </script>
+    <script>
+        document.getElementById("showPassword").addEventListener("click", function () {
+            togglePasswordVisibility();
+        });
+
+        document.getElementById("hidePassword").addEventListener("click", function () {
+            togglePasswordVisibility();
+        });
+
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById("password");
+            const showPasswordButton = document.getElementById("showPassword");
+            const hidePasswordButton = document.getElementById("hidePassword");
+
+            const isPasswordVisible = passwordInput.type === "text";
+            passwordInput.type = isPasswordVisible ? "password" : "text";
+
+            if (isPasswordVisible) {
+                showPasswordButton.style.display = "block";
+                hidePasswordButton.style.display = "none";
+            } else {
+                showPasswordButton.style.display = "none";
+                hidePasswordButton.style.display = "block";
+            }
+        }
+
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+</body>
+
+</html>

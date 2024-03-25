@@ -1,0 +1,40 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+    <link href="../../dist/output.css" rel="stylesheet">
+    <title>Verify</title>
+  </head>
+  <body>
+    <section class="p-5 w-full h-screen flex items-center justify-center">
+      <div
+        class="bg-gray-100 rounded-lg shadow-lg border-[#002D74] p-8 max-w-md mx-auto"
+      >
+        <h2 class="font-bold text-2xl text-black mb-4 text-center">
+            Verify your account
+        </h2>
+        <form action="" class="flex flex-col gap-4">
+          <input class="p-2 rounded-xl border"
+            id="email"
+            type="email"
+            name="email"
+            placeholder="Enter Email Address"
+          />
+          <input id="otp" class="p-2 rounded-xl border"
+            type="text"
+            name="otp"
+            placeholder="Enter OTP"
+          />
+
+          <div onclick="verifyUser()" style="cursor: pointer;" class="bg-[#002D74] text-center rounded-xl text-white py-2 hover:scale-105 duration-300">
+            Verify OTP
+          </div>
+        </form>
+      </div>
+    </section>
+    <script src="../../js/verified.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  </body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--favicon-->
+  <link rel="icon" href="../../Admin/assets/images/favicon-32x32.png" type="image/png" />
+  <!--plugins-->
+  <link href="../../Admin/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+  <link href="../../Admin/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+  <link href="../../Admin/assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+  <link href="../../Admin/assets/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+  <!-- loader-->
+  <link href="../../Admin/assets/css/pace.min.css" rel="stylesheet" />
+  <script src="../../Admin/assets/js/pace.min.js"></script>
+  <!-- Bootstrap CSS -->
+  <link href="../../Admin/assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/pages/Admin/assets/css/products.css" rel="stylesheet" />
+  <link href="../../Admin/assets/css/bootstrap-extended.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="../../Admin/assets/css/app.css" rel="stylesheet" />
+  <link href="../../Admin/assets/css/icons.css" rel="stylesheet" />
+  <!-- Theme Style CSS -->
+  <link rel="stylesheet" href="../../Admin/assets/css/dark-theme.css" />
+  <link rel="stylesheet" href="../../Admin/assets/css/semi-dark.css" />
+  <link rel="stylesheet" href="../../Admin/assets/css/header-colors.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <title>Products</title>
+</head>
+<a href="/pages/Auth/logintration.html"></a>
+
+<body>
+  <!--wrapper-->
+  <div class="wrapper">
+    <!--sidebar wrapper -->
+    <div class="sidebar-wrapper" data-simplebar="true">
+      <div class="sidebar-header">
+        <div>
+          <img src="../../../assets/layout/Meubel House_Logos-05.png" class="logo-icon" alt="logo icon" />
+        </div>
+        <div>
+          <h4 class="logo-text">GenTech</h4>
+        </div>
+        <div class="toggle-icon ms-auto">
+          <i class="bx bx-arrow-to-left"></i>
+        </div>
+      </div>
+      <!--navigation-->
+      <ul class="metismenu" id="menu">
+        <li>
+          <a href="javascript:;" class="has-arrow">
+            <div class="parent-icon"><i class="bx bx-cart"></i></div>
+            <div class="menu-title">eCommerce</div>
+          </a>
+          <ul>
+            <li>
+              <a href="../../Admin/Category/ecommerce-products-categories.html"><i
+                  class="bx bx-right-arrow-alt"></i>Categories</a>
+            </li>
+            <li>
+              <a href="../../Admin/Products/ecommerce-products.html"><i class="bx bx-right-arrow-alt"></i>Products</a>
+            </li>
+            <li>
+              <a href="../../Admin/user-management/user-management.html"><i class="bx bx-right-arrow-alt"></i>Users</a>
+            </li>
+            <li>
+              <a href="../../Admin/Order_List/order_list.html"><i class="bx bx-right-arrow-alt"></i>Orders</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!--end navigation-->
+    </div>
+    <!--end sidebar wrapper -->
+    <!--start header -->
+    <header>
+      <div class="topbar d-flex align-items-center">
+        <nav class="navbar navbar-expand">
+          <div class="mobile-toggle-menu"><i class="bx bx-menu"></i></div>
+          <div class="search-bar flex-grow-1"></div>
+          <div class="top-menu ms-auto">
+            <ul class="navbar-nav align-items-center">
+              <li class="nav-item mobile-search-icon"></li>
+              <li class="nav-item dropdown dropdown-large">
+                <div class="dropdown-menu dropdown-menu-end">
+                  <div class="row row-cols-3 g-3 p-3">
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                    <div class="col text-center"></div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item dropdown dropdown-large">
+                <div class="dropdown-menu dropdown-menu-end">
+                  <a href="javascript:;"> </a>
+                  <div class="header-notifications-list">
+                    <a class="dropdown-item" href="javascript:;"> </a>
+                    <a class="dropdown-item" href="javascript:;"> </a>
+                    <a class="dropdown-item" href="javascript:;"> </a>
+                    <a class="dropdown-item" href="javascript:;"> </a>
+                    <a class="dropdown-item" href="javascript:;"> </a>
+                    <a class="dropdown-item" href="javascript:;"> </a>
+                    <a class="dropdown-item" href="javascript:;"> </a>
+                    <a class="dropdown-item" href="javascript:;"> </a>
+                    <a class="dropdown-item" href="javascript:;"> </a>
+                  </div>
+                  <a href="javascript:;"> </a>
+                </div>
+              </li>
+              <li class="nav-item dropdown dropdown-large">
+                <div class="dropdown-menu dropdown-menu-end">
+                  <a href="javascript:;"> </a>
+                  <div class="header-message-list">
+                    <a class="dropdown-item" href="javascript:;"> </a>
+                    <a class="dropdown-item" href="javascript:;"> </a>
+                    <a class="dropdown-item" href="javascript:;"> </a>
+                    <a class="dropdown-item" href="javascript:;"> </a>
+                    <a class="dropdown-item" href="javascript:;"> </a>
+                    <a class="dropdown-item" href="javascript:;"> </a>
+                    <a class="dropdown-item" href="javascript:;"> </a>
+                    <a class="dropdown-item" href="javascript:;"> </a>
+                    <a class="dropdown-item" href="javascript:;"> </a>
+                    <a class="dropdown-item" href="javascript:;"> </a>
+                    <a class="dropdown-item" href="javascript:;"> </a>
+                  </div>
+                  <a href="javascript:;"> </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="user-box dropdown">
+            <a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <div class="user-info ps-3">
+                <p class="user-name mb-0" id="userName">Admin</p>
+              </div>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <a onclick="logout()" class="dropdown-item" href="javascript:;"><i
+                    class="bx bx-log-out-circle"></i><span>Logout</span></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!--end header -->
+    <!--start page wrapper -->
+    <!-- ----------------------- Message display ----------------------- -->
+    <!-- Successfully add product Message -->
+    <div class="toast toast-position bg-white" role="alert" aria-live="assertive" aria-atomic="true" id="successToast">
+      <div class="toast-header">
+        <i class="fa fa-check-circle me-2 text-success" aria-hidden="true"></i>
+        <strong class="me-auto">Notification</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body" id="successMessage">
+        Product added successfully!
+      </div>
+    </div>
+    <!-- Fail to add product Message -->
+    <div class="toast toast-position bg-white" role="alert" aria-live="assertive" aria-atomic="true" id="failToast">
+      <div class="toast-header">
+        <i class="fa fa-exclamation-triangle text-danger me-2" aria-hidden="true"></i>
+        <strong class="me-auto">Notification</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body" id="warnMessage">Warning!!!</div>
+    </div>
+    <!-- ----------------------- End Message display ----------------------- -->
+    <div class="page-wrapper">
+      <div class="page-content">
+        <!--breadcrumb-->
+        <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+          <div class="ms-auto"></div>
+        </div>
+        <!--end breadcrumb-->
+        <h6 class="mb-4 fs-2 text-uppercase text-center">
+          Product Management
+        </h6>
+        <button class="show-add-product-button" id="show-add-product-form">
+          Add Product
+        </button>
+        <hr />
+        <div class="card">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table id="example" class="table table-striped table-bordered" style="width: 100%">
+                <thead>
+                  <tr>
+                    <th class="text-center">No.</th>
+                    <th class="text-center sorting_asc_disabled sorting_desc_disabled">
+                      Image
+                    </th>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Title</th>
+                    <th class="text-center">Price</th>
+                    <th class="text-center sorting_asc_disabled sorting_desc_disabled">
+                      Actions
+                    </th>
+                  </tr>
+                </thead>
+                <tbody id="productManagement"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- View product -->
+        <div id="view-popup" class="product-popup">
+          <div class="product-popup-content">
+            <h2 class="h2-text">Update Product</h2>
+            <div class="form-group">
+              <label for="viewProductName" class="product-name">Name:</label>
+              <p id="viewProductName"></p>
+            </div>
+            <div class="form-group">
+              <label for="viewProductCategory" class="product-name">Category:</label>
+              <p id="viewProductCategory"></p>
+            </div>
+
+            <div class="form-group">
+              <label for="viewProductTitle" class="product-name">Product Title:</label>
+              <p id="viewProductTitle"></p>
+            </div>
+
+            <div class="form-group">
+              <label for="viewProductDescription" class="product-name">Description:</label>
+              <p id="viewProductDescription"></p>
+            </div>
+            <div class="form-group">
+              <label for="viewProductPrice" class="product-name">Price:</label>
+              <p id="viewProductPrice"></p>
+            </div>
+            <div class="form-group">
+              <label for="listProductImages" class="product-name">Images:</label>
+              <div id="listProductImages" class="show-edit-image-container"></div>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary" type="button" id="openEditViewPopup" onclick="openEditPopup(id)">
+                <span class="spinner-border spinner-border-sm d-none" aria-hidden="true"></span>
+                <span id="openEditProduct">Update Product</span>
+              </button>
+              <button class="cancel" onclick="closeViewPopup()">Close</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add Product -->
+        <div id="product-popup" class="product-popup">
+          <div class="product-popup-content">
+            <form id="addProductForm">
+              <h2 class="h2-text">Add New Product</h2>
+              <div class="form-group">
+                <label for="name" class="product-name">Name:</label>
+                <input type="text" id="name" name="name" class="form-control" required />
+              </div>
+
+              <div class="form-group">
+                <label for="categoryId" class="product-name">Product Category:</label>
+                <!-- You can replace the options with the actual categories from your API -->
+                <select id="categoryId" name="categoryId" class="form-select" required>
+                  <!-- Add more options as needed -->
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="title" class="product-name">Product Title:</label>
+                <input id="title" name="title" class="form-control" required />
+              </div>
+
+              <div class="form-group">
+                <label for="price" class="product-name">Product Price:</label>
+                <input type="number" id="price" class="form-control" name="price" required />
+              </div>
+
+              <!-- Input for product images -->
+              <div class="form-group">
+                <label for="imageUpload" class="product-name">Product Images:</label>
+                <input class="form-control" type="file" id="imageUpload" name="list_image" accept="image/*" multiple
+                  required />
+              </div>
+
+              <!-- Input description -->
+              <div class="form-group">
+                <label for="description" class="product-name">Product Description:</label>
+                <textarea id="description" name="description" required class="form-control"></textarea>
+              </div>
+
+              <div>
+                <button class="btn btn-primary" type="button" id="addProductBtn" onclick="addProduct()">
+                  <span class="spinner-border spinner-border-sm d-none" aria-hidden="true"></span>
+                  <span id="addProductBtnText">Add Product</span>
+                </button>
+                <button class="cancel" id="close-popup">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- Popup Edit Container -->
+        <div id="edit-popup" class="product-popup">
+          <div class="product-popup-content">
+            <h2 class="h2-text">Update Product</h2>
+            <div class="form-group">
+              <label for="productName" class="product-name">Name:</label>
+              <input id="editProductName" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label for="editProductCategory" class="product-name">Category:</label>
+              <select id="editProductCategory" class="form-select" aria-label="Default select example"></select>
+            </div>
+
+            <div class="form-group">
+              <label for="editTitle" class="product-name">Product Title:</label>
+              <input id="editTitle" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+              <label for="editProductDescription" class="product-name">Description:</label>
+              <textarea class="form-control" id="editProductDescription" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="editProductPrice" class="product-name">Price:</label>
+              <input id="editProductPrice" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label for="listEditImage" class="product-name">Images:</label>
+              <div id="listEditImage" class="show-edit-image-container"></div>
+            </div>
+            <form id="editImageUploadForm" class="form-group" action="/upload" method="POST"
+              enctype="multipart/form-data">
+              <label for="editImageUpload" class="product-name">Select Images to Update:</label>
+              <input class="form-control" type="file" id="editImageUpload" name="list_image" accept="image/*"
+                multiple />
+            </form>
+            <div class="form-group">
+              <button class="btn btn-primary" type="button" id="confirmEditProduct" onclick="editProduct()">
+                <span class="spinner-border spinner-border-sm d-none" aria-hidden="true"></span>
+                <span id="editProductBtnText">Update</span>
+              </button>
+              <button class="cancel" onclick="closeEditPopup()" id="close-edit-popup">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Delete Confirmation Popup -->
+        <div id="delete-popup" class="delete-product-popup" style="display: none">
+          <div class="delete-product-popup-content">
+            <div class="above-panel">
+              <h2 class="h2-text">
+                Are you sure want to delete this product?
+              </h2>
+              <div class="form-group m-0">
+                <button class="save-product-button me-2" id="confirmDeleteProduct">
+                  <span id="deleteProductBtnText">Delete</span>
+                </button>
+                <button class="cancel" onclick="closeDeletePopup()">
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--- ----------------------------------------------------------- -->
+      </div>
+    </div>
+    <!--end page wrapper -->
+    <!--start overlay-->
+    <div class="overlay toggle-icon"></div>
+    <!--end overlay-->
+    <!--Start Back To Top Button-->
+    <a href="javaScript:;" class="back-to-top"><i class="bx bxs-up-arrow-alt"></i></a>
+    <!--End Back To Top Button-->
+    <footer class="page-footer">
+      <p class="mb-0">Copyright © 2021. All right reserved.</p>
+    </footer>
+  </div>
+  <!--end wrapper-->
+  <!--start switcher-->
+
+  <!--end switcher-->
+  <!-- Bootstrap JS -->
+  <script src="../../Admin/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="./product.js"></script>
+
+  <!--plugins-->
+  <script src="../../Admin/assets/js/jquery.min.js"></script>
+  <script src="../../Admin/assets/plugins/simplebar/js/simplebar.min.js"></script>
+  <script src="../../Admin/assets/plugins/metismenu/js/metisMenu.min.js"></script>
+  <script src="../../Admin/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+  <script src="../../Admin/assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+  <script src="../../Admin/assets/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#example").DataTable();
+    });
+  </script>
+  <script>
+    $(document).ready(function () {
+      var table = $("#example2").DataTable({
+        lengthChange: false,
+        buttons: ["copy", "excel", "pdf", "print"],
+      });
+
+      table
+        .buttons()
+        .container()
+        .appendTo("#example2_wrapper .col-md-6:eq(0)");
+    });
+  </script>
+
+  <!--app JS-->
+  <script src="../../Admin/assets/js/app.js"></script>
+</body>
+
+</html>

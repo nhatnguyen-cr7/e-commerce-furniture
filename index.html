@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Poppins:ital,wght@1,400;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>GenTech</title>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header" style="height: 111px">
+      <div
+        style="
+          position: fixed;
+          top: 0;
+          width: 100%;
+          z-index: 21;
+          background-color: white;
+        "
+      >
+        <div class="layout-header-container">
+          <div class="layout-header-logo">
+            <img
+              src="/assets/single-product/imgs/Meubel House_Logos-05.png"
+              alt=""
+            />
+            <span href="">GenTech</span>
+          </div>
+          <a
+            href="javascript:void(0);"
+            id="menuButton"
+            class="layout-menu-button"
+            onclick="displayMenuFunction()"
+          >
+            <i class="fa fa-bars" style="font-size: 24px"></i>
+          </a>
+          <!-- menu -->
+          <ul class="layout-header-menu">
+            <li><a href="/index.html" class="header-link">Home</a></li>
+            <li>
+              <a href="/pages/shop/shop.html" class="header-link">Shop</a>
+            </li>
+          </ul>
+
+          <!-- info -->
+          <div class="layout-header-info">
+            <div class="cart-item-count-container">
+              <a href="#" style="color: #000" id="cartLink">
+                <span class="cart-item-count" id="cart-item-count">0</span>
+                <i class="bi bi-cart3" style="font-size: 26px"></i
+              ></a>
+            </div>
+            <div class="d-flex align-items-center">
+              <a
+                href="/pages/Auth/logintration.html"
+                class="login-button"
+                id="login-button"
+                >Login</a
+              >
+              <div class="dropdown" id="user-profile">
+                <button
+                  class="btn dropdown-toggle profile-button"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <span id="userName">Account</span>
+                </button>
+                <ul class="dropdown-menu dropdown-profile-div">
+                  <li>
+                    <a class="dropdown-item" href="/pages/profile/profile.html"
+                      >Profile</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="logout()">Logout</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Small screen -->
+        <ul class="layout-header-menu-hide" id="headerMenu">
+          <li><a href="/index.html" class="header-link-hidden">Home</a></li>
+          <li>
+            <a href="/pages/shop/shop.html" class="header-link-hidden">Shop</a>
+          </li>
+
+          <div class="layout-header-info-hidden">
+            <div class="cart-item-count-container">
+              <a href="#" style="color: #000" id="cartLinkHidden">
+                <span class="cart-item-count-hidden" id="cart-item-count-hidden"
+                  >0</span
+                >
+                <i class="bi bi-cart3" style="font-size: 26px; color: #000"></i
+              ></a>
+            </div>
+            <a
+              href="/pages/Auth/logintration.html"
+              class="login-button"
+              id="login-button-hidden"
+              style="font-size: 20px"
+              >Login</a
+            >
+            <div class="dropdown" id="user-profile-hidden">
+              <button
+                class="btn dropdown-toggle profile-button"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style="color: #000"
+              >
+                <span id="userNameHidden">Account</span>
+              </button>
+              <ul class="dropdown-menu dropdown-profile-div">
+                <a
+                  class="dropdown-item"
+                  style="height: 30px"
+                  href="/pages/profile/profile.html"
+                  >Profile</a
+                >
+                <a class="dropdown-item" style="height: 50px" onclick="logout()"
+                  >Logout</a
+                >
+              </ul>
+            </div>
+          </div>
+        </ul>
+        <!-- End -->
+      </div>
+    </header>
+    <!-- End Header -->
+    <div class="container">
+      <!-- Banner  -->
+      <div class="banner-homepage">
+        <div class="background">
+          <img src="assets/home/imgs/banner.png" alt="" />
+        </div>
+        <div class="banner-content">
+          <p class="arrival">New Arrival</p>
+          <h4 class="heading">Discover Our New Collection</h4>
+          <p class="heading_desc">
+            Explore a world of stylish comfort with our curated furniture
+            collection. Elevate your space effortlessly.
+          </p>
+          <button class="btn_button" onclick="redirectToShopPage()">
+            BUY NOW
+          </button>
+        </div>
+      </div>
+
+      <div class="small_container">
+        <!-- Category  -->
+        <div class="browse">
+          <h2 class="heading_browse">Browse The Range</h2>
+          <p class="browse_desc">
+            Discover stylish living with our curated furniture collection.
+            Explore now for a touch of elegance in every room!
+          </p>
+          <div class="img">
+            <div class="category">
+              <img src="assets/home/imgs/img1.png" alt="" />
+              <p class="category-tag">Dining</p>
+            </div>
+            <div class="category">
+              <img src="assets/home/imgs/img2.png" alt="" />
+              <p class="category-tag">Living</p>
+            </div>
+            <div class="category">
+              <img src="assets/home/imgs/img3.png" alt="" />
+              <p class="category-tag">Bedroom</p>
+            </div>
+          </div>
+        </div>
+        <!-- Product list -->
+        <div class="product_list">
+          <h2 class="heading_product">Our products</h2>
+          <div class="list-related-product overflow-auto" id="products"></div>
+          <div class="button_container">
+            <button class="button" onclick="redirectToShopPage()">
+              Show More
+            </button>
+          </div>
+        </div>
+
+        <!-- Inspiration -->
+        <div class="inspiration">
+          <div class="section">
+            <div class="section_content">
+              <h1 class="ins_title">50+ Beautiful rooms inspiration</h1>
+              <p class="ins_content">
+                Our designer already made a lot of beautiful prototipe of rooms
+                that inspire you
+              </p>
+              <button class="btn_button" onclick="redirectToShopPage()">
+                Explore More
+              </button>
+            </div>
+          </div>
+          <div class="section">
+            <div class="slider-wrapper">
+              <div class="slider">
+                <img
+                  class="img_slide"
+                  src="assets/home/imgs/img11.png"
+                  alt=""
+                />
+                <img
+                  class="img_slide"
+                  src="assets/home/imgs/img12.png"
+                  alt=""
+                />
+                <img
+                  class="img_slide"
+                  src="assets/home/imgs/img13.png"
+                  alt=""
+                />
+                <img class="img_slide" src="assets/home/imgs/img7.png" alt="" />
+                <img class="img_slide" src="assets/home/imgs/img1.png" alt="" />
+                <img class="img_slide" src="assets/home/imgs/img3.png" alt="" />
+                <img
+                  class="img_slide"
+                  src="assets/home/imgs/img10.png"
+                  alt=""
+                />
+              </div>
+
+              <div class="slider-bav">
+                <button
+                  class="w3-button w3-black w3-display-left"
+                  onclick="plusDivs(-1)"
+                >
+                  &#10094;
+                </button>
+                <button
+                  class="w3-button w3-black w3-display-right"
+                  onclick="plusDivs(1)"
+                >
+                  &#10095;
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery starts here -->
+        <div class="gallery-content">
+          <p>Share your setup with</p>
+          <h1>#FuniroFurniture</h1>
+        </div>
+        <div class="img-gallery">
+          <div class="column">
+            <img src="assets/home/imgs/img30.png" alt="" />
+            <img src="assets/home/imgs/img31.png" alt="" />
+            <img src="assets/home/imgs/img25.png" alt="" />
+            <img src="assets/home/imgs/img32.png" alt="" />
+          </div>
+          <div class="column">
+            <img src="assets/home/imgs/img12.png" alt="" />
+            <img src="assets/home/imgs/img15.png" alt="" />
+            <img src="assets/home/imgs/img29.png" alt="" />
+          </div>
+          <div class="column">
+            <img src="assets/home/imgs/img19.png" alt="" />
+            <img src="assets/home/imgs/img20.png" alt="" />
+            <img src="assets/home/imgs/img18.png" alt="" />
+            <img src="assets/home/imgs/img28.png" alt="" />
+          </div>
+          <div class="column">
+            <img src="assets/home/imgs/img24.png" alt="" />
+            <img src="assets/home/imgs/img23.png" alt="" />
+            <img src="assets/home/imgs/img26.png" alt="" />
+            <img src="assets/home/imgs/img22.png" alt="" />
+          </div>
+        </div>
+        <!-- Gallery end  -->
+      </div>
+
+      <!-- Back to top -->
+      <div class="back-to-top" id="backToTop">
+        <a href="#top">
+          <i class="fa fa-angle-double-up"></i>
+        </a>
+      </div>
+    </div>
+    <footer class="layout-footer">
+      <div class="layout-footer-container">
+        <div class="layout-footer-logo">
+          <span>GenTech</span>
+          <div class="layout-footer-text">
+            116 - 118 Mai Thuc Lan
+            <br />
+            Da Nang, Viet Nam
+          </div>
+        </div>
+        <div class="layout-footer-list">
+          <span class="layout-footer-title">Links</span>
+          <ul class="layout-footer-menu">
+            <li>
+              <a href="" class="layout-footer-link">Home</a>
+            </li>
+            <li>
+              <a href="/pages/shop/shop.html" class="layout-footer-link"
+                >Shop</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="layout-footer-list">
+          <span class="layout-footer-title">Helps</span>
+          <ul class="layout-footer-menu">
+            <li>
+              <a href="" class="layout-footer-link">Returns</a>
+            </li>
+            <li>
+              <a href="" class="layout-footer-link">Privacy Policies</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="layout-text-end">2023 GenTech. All rights reverved.</div>
+    </footer>
+    <!-- ----------------------- Message display ----------------------- -->
+    <!-- Successfully add product Message -->
+    <div
+      class="toast toast-position bg-white"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+      id="successToast"
+    >
+      <div class="toast-header">
+        <i class="bi bi-check-circle text-success me-2"></i>
+        <strong class="me-auto">Notification</strong>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="toast"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="toast-body">Product added successfully!</div>
+    </div>
+    <!-- Fail to add product Message -->
+    <div
+      class="toast toast-position bg-white"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+      id="failToast"
+    >
+      <div class="toast-header">
+        <i class="bi bi-exclamation-triangle text-warning me-2"></i>
+        <strong class="me-auto">Notification</strong>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="toast"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="toast-body">Please enter quantity greater than 0.</div>
+    </div>
+    <!-- ----------------------- End Message display ----------------------- -->
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("headerMenu");
+        var button = document.getElementById("menuButton");
+
+        button.onclick = function () {
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+        };
+      }
+    </script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

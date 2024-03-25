@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--favicon-->
+    <link rel="icon" href="../../Admin/assets/images/favicon-32x32.png" type="image/png" />
+    <!--plugins-->
+    <link href="../../Admin/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+    <link href="../../Admin/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+    <link href="../../Admin/assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+    <link href="../../Admin/assets/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    <!-- loader-->
+    <link href="../../Admin/assets/css/pace.min.css" rel="stylesheet" />
+    <script src="../../Admin/assets/js/pace.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="../../Admin/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../Admin/assets/css/bootstrap-extended.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="../../Admin/assets/css/app.css" rel="stylesheet">
+    <link href="../../Admin/assets/css/icons.css" rel="stylesheet">
+    <!-- Theme Style CSS -->
+    <link rel="stylesheet" href="../../Admin/assets/css/dark-theme.css" />
+    <link rel="stylesheet" href="../../Admin/assets/css/semi-dark.css" />
+    <link rel="stylesheet" href="../../Admin/assets/css/header-colors.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .view-icon {
+            color: #008cff;
+            background-color: white;
+            cursor: pointer;
+            border: 1px solid #008cff;
+            padding: 15px;
+            border-radius: 12px;
+            margin-right: 15px;
+        }
+
+        .view-icon:hover {
+            color: white;
+            background-color: #008cff;
+            transition: 0.5s;
+        }
+
+        .delete-icon {
+            color: #e2372b;
+            background-color: white;
+            cursor: pointer;
+            border: 1px solid #e2372b;
+            padding: 15px;
+            border-radius: 12px;
+        }
+
+        .delete-icon:hover {
+            color: white;
+            background-color: #e2372b;
+            transition: 0.5s;
+        }
+
+        /* CSS để thay đổi màu sắc của option được chọn */
+        select.statusSelector {
+            background-color: #fff;
+            /* Màu nền mặc định */
+        }
+
+        /* Thay đổi màu nền của option khi được chọn */
+        select.statusSelector option:checked {
+            background-color: var(--selected-color);
+            color: #bd0f0f;
+            /* Đổi màu chữ để phù hợp với màu nền */
+        }
+
+        .toast-position {
+            z-index: 1;
+            position: fixed;
+            top: 62px;
+            right: 10px;
+        }
+    </style>
+    <title>Orders</title>
+</head>
+
+<body>
+    <!--wrapper-->
+    <div class="wrapper">
+        <!--sidebar wrapper -->
+        <div class="sidebar-wrapper" data-simplebar="true">
+            <div class="sidebar-header">
+                <div>
+                    <img src="../../../assets/layout/Meubel House_Logos-05.png" class="logo-icon" alt="logo icon">
+                </div>
+                <div>
+                    <h4 class="logo-text">GenTech</h4>
+                </div>
+                <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
+                </div>
+            </div>
+            <!--navigation-->
+            <ul class="metismenu" id="menu">
+                <li>
+                    <a href="javascript:;">
+                        <div class="parent-icon"><i class='bx bx-home-circle'></i>
+                        </div>
+                        <div class="menu-title">Dashboard</div>
+                    </a>
+
+                </li>
+                <li>
+                    <a href="javascript:;" class="has-arrow">
+                        <div class="parent-icon"><i class='bx bx-cart'></i>
+                        </div>
+                        <div class="menu-title">eCommerce</div>
+                    </a>
+                    <ul>
+                        <li> <a href="../../Admin/Category/ecommerce-products-categories.html"><i
+                                    class="bx bx-right-arrow-alt"></i>Categories</a>
+                        </li>
+                        <li> <a href="../../Admin/Products/ecommerce-products.html"><i
+                                    class="bx bx-right-arrow-alt"></i>Products</a>
+                        </li>
+                        <li> <a href="../../Admin/user-management/user-management.html"><i
+                                    class="bx bx-right-arrow-alt"></i>User</a>
+                        </li>
+                        <li> <a href="../../Admin/Order_List/order_list.html"><i
+                                    class="bx bx-right-arrow-alt"></i>Orders</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!--end navigation-->
+        </div>
+        <!--end sidebar wrapper -->
+        <!--start header -->
+        <header>
+            <div class="topbar d-flex align-items-center">
+                <nav class="navbar navbar-expand">
+                    <div class="mobile-toggle-menu"><i class='bx bx-menu'></i>
+                    </div>
+                    <div class="search-bar flex-grow-1">
+
+                    </div>
+                    <div class="top-menu ms-auto">
+                        <ul class="navbar-nav align-items-center">
+                            <li class="nav-item mobile-search-icon">
+
+                            </li>
+                            <li class="nav-item dropdown dropdown-large">
+
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <div class="row row-cols-3 g-3 p-3">
+                                        <div class="col text-center">
+
+                                        </div>
+                                        <div class="col text-center">
+
+                                        </div>
+                                        <div class="col text-center">
+
+                                        </div>
+                                        <div class="col text-center">
+
+                                        </div>
+                                        <div class="col text-center">
+
+                                        </div>
+                                        <div class="col text-center">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown dropdown-large">
+
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a href="javascript:;">
+
+                                    </a>
+                                    <div class="header-notifications-list">
+                                        <a class="dropdown-item" href="javascript:;">
+
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+
+                                        </a>
+                                    </div>
+                                    <a href="javascript:;">
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown dropdown-large">
+
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a href="javascript:;">
+
+                                    </a>
+                                    <div class="header-message-list">
+                                        <a class="dropdown-item" href="javascript:;">
+
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+
+                                        </a>
+                                    </div>
+                                    <a href="javascript:;">
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="user-box dropdown">
+                        <a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="user-info ps-3">
+                                <p id="userName" class="user-name mb-0">Admin</p>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+
+                            <li><a class="dropdown-item" onclick="logout()"><i
+                                        class='bx bx-log-out-circle'></i><span>Logout</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!--end header -->
+        <!-- Message -->
+        <div class="toast toast-position bg-white" role="alert" aria-live="assertive" aria-atomic="true"
+            id="successToast">
+            <div class="toast-header">
+                <i class="fa fa-check-circle me-2 text-success" aria-hidden="true"></i>
+                <strong class="me-auto">Notification</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="successMessage">
+                Edit Status successfully!
+            </div>
+        </div>
+        <!-- Fail to add product Message -->
+        <div class="toast toast-position bg-white" role="alert" aria-live="assertive" aria-atomic="true" id="failToast">
+            <div class="toast-header">
+                <i class="fa fa-exclamation-triangle text-danger me-2" aria-hidden="true"></i>
+                <strong class="me-auto">Notification</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="warnMessage">Failed to Update!!!</div>
+        </div>
+
+
+        <!--start page wrapper -->
+        <div class="page-wrapper">
+            <div class="page-content">
+                <!--breadcrumb-->
+                <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+
+                    <div class="ms-auto">
+
+                    </div>
+                </div>
+                <!--end breadcrumb-->
+                <h6 class="mb-0 text text-uppercase text-center">Order Management</h6>
+                <hr />
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered" style="width:100%" id="order_list">
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>Full Name</th>
+                                        <th>Email</th>
+                                        <th>Total Price</th>
+                                        <th>Status Orders</th>
+                                        <th>Phone</th>
+                                        <th class="text-center">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="get_order_list">
+
+                                </tbody>
+
+                            </table>
+                        </div>
+                        <div id="pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end page wrapper -->
+        <!--start overlay-->
+        <div class="overlay toggle-icon"></div>
+        <!--end overlay-->
+        <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i
+                class='bx bxs-up-arrow-alt'></i></a>
+        <!--End Back To Top Button-->
+        <footer class="page-footer">
+            <p class="mb-0">Copyright © 2021. All right reserved.</p>
+        </footer>
+    </div>
+    <!--end wrapper-->
+    <!--start switcher-->
+
+    <!--end switcher-->
+    <!-- Bootstrap JS -->
+    <script src="../../Admin/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../../Admin/Order_List/orders.js"></script>
+
+    <!--plugins-->
+    <script src="../../Admin/assets/js/jquery.min.js"></script>
+    <script src="../../Admin/assets/plugins/simplebar/js/simplebar.min.js"></script>
+    <script src="../../Admin/assets/plugins/metismenu/js/metisMenu.min.js"></script>
+    <script src="../../Admin/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+    <script src="../../Admin/assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+    <script src="../../Admin/assets/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('#order_list').DataTable(
+
+            );
+        });
+    </script>
+
+    <!--app JS-->
+    <script src="../../Admin/assets/js/app.js"></script>
+
+</body>
+
+</html>

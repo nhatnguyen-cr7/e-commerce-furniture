@@ -1,0 +1,248 @@
+body,
+html {
+  height: 90%;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  /* padding-left: 25px; */
+}
+
+.above-panel,
+.below-panel {
+  margin: 10px 0;
+}
+
+.above-panel {
+  flex: 1;
+  border-radius: 20px;
+  padding: 35px;
+}
+
+.below-panel {
+  flex: 2;
+}
+
+.h2-text {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.category-name,
+.category-description {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.input-category-name,
+.input-category-desc {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #dfdddd;
+}
+
+.add-category-button,
+.save-category-button,
+.cancel,
+.cancel-delete-button,
+.confirm-delete-button {
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.add-category-button,
+.save-category-button {
+  background-color: #2bb7e2;
+}
+
+.cancel,
+.confirm-delete-button,
+.cancel-delete-button:hover {
+  background-color: #e2372b;
+}
+
+.cancel-delete-button {
+  background-color: #cfd3d4;
+}
+
+.add-category-button:hover,
+.save-category-button:hover {
+  background-color: #0056b3;
+}
+
+.cancel:hover,
+.confirm-delete-button:hover {
+  background-color: #b8150a;
+}
+
+.action-cate {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Popup Styles */
+.category-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(83, 83, 83, 0.308);
+  z-index: 1;
+  overflow: auto;
+}
+
+.category-popup-content {
+  background-color: #fff;
+  margin: 6% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 50%;
+}
+
+.toast-position {
+  z-index: 2;
+  position: fixed;
+  top: 62px;
+  right: 10px;
+  border: none;
+}
+
+.show-add-category-button {
+  background-color: #ffffff;
+  color: black;
+  border: 1px solid black;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 150px;
+}
+
+.show-add-category-button:hover {
+  box-shadow: 2px 3px 18px rgb(156, 156, 156);
+  background-color: black;
+  color: white;
+  transition: 0.6s;
+}
+
+@media screen and (max-width: 900px) {
+  .toast-position {
+    top: 105px;
+    left: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Add a media query for screens with a maximum width of 400px */
+@media (max-width: 400px) {
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .category-popup-content {
+    width: 90%; /* Adjust the width of the popup for smaller screens */
+    margin-top: 80px;
+  }
+
+  .show-add-category-button {
+    margin-left: 0; /* Remove left margin for the button */
+  }
+}
+
+/* Table css */
+
+/* Style the table data cells */
+
+.icon-action {
+  display: flex;
+  gap: 10px;
+}
+.icon-action i {
+  margin: 3px;
+  cursor: pointer;
+}
+
+.edit-icon {
+  color: rgb(0, 165, 104);
+  background-color: white;
+  cursor: pointer;
+  border: 1px solid rgb(0, 165, 104);
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.edit-icon:hover {
+  color: white;
+  background-color: rgb(0, 165, 104);
+  transition: 0.5s;
+}
+
+.delete-icon {
+  color: #e2372b;
+  background-color: white;
+  cursor: pointer;
+  border: 1px solid #e2372b;
+  padding: 15px 16px;
+  border-radius: 12px;
+}
+
+.delete-icon:hover {
+  color: white;
+  background-color: #e2372b;
+  transition: 0.5s;
+}
+
+.category-actions {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.search-container {
+  display: flex;
+  position: relative;
+  width: 500px;
+  /* margin-left: auto; */
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  padding: 15px 20px;
+  background-color: #e6e6e6;
+  height: 50px;
+  border-radius: 15px;
+  flex: 1;
+  width: 100%;
+}
+
+.search-icon {
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
